@@ -94,11 +94,13 @@ CL-USER> (append list1 (third list1))
 
 ```lisp
 (defun MyListOption ()
-      (cons 'A
-            (list (list 'B 1)
-                  'C
-                  'B
-                  1)))
+  (let ((tail (cons 1 nil)))
+    (cons 'A
+          (list (cons 'B tail)
+                'C
+                'B
+                tail))))
+                
 (set 'list2  (MyListOption))
 
 CL-USER> list2
