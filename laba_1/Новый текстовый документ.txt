@@ -1,0 +1,17 @@
+(defun MyList ()
+      (cons 'A1
+            (list "world"
+                  (list 99 'B2)
+                  'C3
+                  7)))
+
+(defun MyListOption ()
+  (let ((tail (cons 1 nil)))
+    (cons 'A
+          (list (cons 'B tail)
+                'C
+                'B
+                tail))))
+
+(set 'list1  (MyList))
+(set 'list2  (MyListOption))
